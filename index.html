@@ -73,6 +73,7 @@
     gap: 10px;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur petit écran */
   }
   .toolbar .btn {
     appearance: none;
@@ -82,6 +83,11 @@
     border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
+    text-decoration: none;
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
   }
   .toolbar .btn.primary {
     border-color: var(--accent);
@@ -222,11 +228,17 @@
 </style>
 </head>
 <body>
-<div class="toolbar">
+
+<div class="toolbar no-print">
   <div class="toolbar-inner">
-    <div style="font-weight:700;">Fiche Hernie discale lombaire</div>
+    <a href="https://raphaeljameson-png.github.io/accueil_fiches_informatives_EFR/" class="btn">
+      <span>←</span> Accueil
+    </a>
+    <div style="font-weight:700; text-align: center; flex: 1;">Fiche Hernie discale lombaire</div>
+    <button class="btn primary" onclick="window.print()">Imprimer / PDF</button>
   </div>
 </div>
+
 <div class="wrap">
   <div class="page">
     <header class="top">
